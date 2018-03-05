@@ -1,0 +1,22 @@
+<div class="music-box">
+    <audio ng-src="{{$sce.trustAsResourceUrl(musicUrl)}}" id="music"></audio>
+    <div>
+        <div class="progress" ng-click="playChange()">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+            <img class="progressSpot" src="image/slider.png">
+        </div>
+        <p class="musicTime">00:00:00/{{musicTime}}</p>
+    </div>
+
+    <div class="volume-box">
+        <span class="glyphicon volumeImg" ng-click="mute()" ng-class="{'glyphicon-volume-down':!isMute,'glyphicon-volume-off':isMute}"></span>
+        <div class="volumeDown" ng-click="volumeChange()">
+            <div class="volumeUp"></div>
+            <img class="volumeSpot" src="image/slider.png">
+        </div>
+    </div>
+    <span class="glyphicon glyphicon-backward" ng-click="musicBackward()"></span>
+    <span class="glyphicon musicPlay glyphicon-play" ng-click="musicPlay()"></span>
+    <span class="glyphicon glyphicon-forward" ng-click="musicForward()"></span>
+</div>
